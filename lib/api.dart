@@ -9,7 +9,7 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => MyHomePageState();
 }
 
-String value = 'Press Enter';
+String value = '';
 
 class MyHomePageState extends State<MyHomePage> {
   Future genderPredict(String name) async {
@@ -20,6 +20,12 @@ class MyHomePageState extends State<MyHomePage> {
       value = body['gender'];
       // print(value);
     });
+  }
+
+  @override
+  void initState() {
+    genderPredict(value);
+    super.initState();
   }
 
   @override
