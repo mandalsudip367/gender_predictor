@@ -26,9 +26,11 @@ class MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     TextEditingController gender = TextEditingController();
     return Scaffold(
+      backgroundColor: Colors.blue,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Expanded(child: SizedBox()),
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Container(
@@ -36,11 +38,18 @@ class MyHomePageState extends State<MyHomePage> {
                 color: Colors.grey,
                 borderRadius: BorderRadius.circular(10.0),
               ),
-              child: TextFormField(
-                  controller: gender,
-                  decoration: const InputDecoration(
-                      label: Text("Enter Your Name"),
-                      border: InputBorder.none)),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                    controller: gender,
+                    decoration: const InputDecoration(
+                        label: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text("Enter Your Name",
+                              softWrap: true, selectionColor: Colors.black),
+                        ),
+                        border: InputBorder.none)),
+              ),
             ),
           ),
           TextButton(
@@ -61,7 +70,12 @@ class MyHomePageState extends State<MyHomePage> {
             height: 40,
             width: 140,
             child: Center(child: Text('Answer: $value')),
-          )
+          ),
+          Expanded(
+              child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [Text("Developed By Sudip")],
+          )),
         ],
       ),
     );
