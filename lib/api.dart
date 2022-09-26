@@ -30,7 +30,7 @@ class MyHomePageState extends State<MyHomePage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Expanded(child: SizedBox()),
+          const Expanded(child: SizedBox()),
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Container(
@@ -74,7 +74,7 @@ class MyHomePageState extends State<MyHomePage> {
           Expanded(
               child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
-            children: [Text("Developed By Sudip")],
+            children: const [Text("Developed By Sudip")],
           )),
         ],
       ),
